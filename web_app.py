@@ -12,30 +12,16 @@ from openai import OpenAI
 st.set_page_config(page_title="⚡ Thozhan AI Studio", page_icon="⚡", layout="wide")
 hide_streamlit_style = """
     <style>
-    /* Top Header & Toolbar hide panna */
-    header, [data-testid="stHeader"], [data-testid="stToolbar"] {
-        visibility: hidden !important;
-        display: none !important;
-    }
+    /* Top Header, GitHub icon, and Fork button hide panna */
+    header {visibility: hidden !important; height: 0% !important;}
+    [data-testid="stHeader"] {visibility: hidden !important; display: none !important;}
+    [data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
     
-    /* Bottom 'Created by' & 'Hosted with Streamlit' complete-ah thookka */
-    footer, #MainMenu {
-        visibility: hidden !important;
-        display: none !important;
-    }
-    
-    /* Streamlit Cloud floating footer & badges */
-    div[class*="viewerBadge"], 
-    div[class*="ProfileBadge"],
-    div[class*="manageApp"],
-    div[class*="FloatingMenu"],
-    div[data-testid="stStatusWidget"],
-    .stApp > div:last-child {
-        display: none !important;
-        visibility: hidden !important;
-    }
-    
-    /* Top padding */
+    /* Footer elements */
+    footer {visibility: hidden !important; display: none !important;}
+    #MainMenu {visibility: hidden !important;}
+
+    /* Top padding balance panna */
     .block-container {
         padding-top: 1.5rem !important;
         padding-bottom: 2rem !important;
