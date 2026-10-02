@@ -12,23 +12,33 @@ from openai import OpenAI
 st.set_page_config(page_title="⚡ Thozhan AI Studio", page_icon="⚡", layout="wide")
 hide_streamlit_style = """
     <style>
-    /* Top header bar, GitHub icon matrum Fork button complete-ah hide aagum */
-    header {visibility: hidden !important; height: 0% !important;}
-    [data-testid="stHeader"] {visibility: hidden !important; display: none !important;}
-    [data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
-    [data-testid="stDecoration"] {display: none !important;}
+    /* Top Header & Toolbar hide panna */
+    header, [data-testid="stHeader"], [data-testid="stToolbar"] {
+        visibility: hidden !important;
+        display: none !important;
+    }
     
-    /* Bottom-la irukra Profile badge, GitHub watermark matrum footer hide aagum */
-    footer {visibility: hidden !important; display: none !important;}
-    #MainMenu {visibility: hidden !important; display: none !important;}
-    [data-testid="stStatusWidget"] {display: none !important;}
-    .viewerBadge_container__1QSob, [class*="viewerBadge_container"] {display: none !important;}
-    div[class*="ProfileBadge"] {display: none !important;}
+    /* Bottom 'Created by' & 'Hosted with Streamlit' complete-ah thookka */
+    footer, #MainMenu {
+        visibility: hidden !important;
+        display: none !important;
+    }
     
-    /* Top padding-ah adjust panni content neat-ah mela kondu vara */
+    /* Streamlit Cloud floating footer & badges */
+    div[class*="viewerBadge"], 
+    div[class*="ProfileBadge"],
+    div[class*="manageApp"],
+    div[class*="FloatingMenu"],
+    div[data-testid="stStatusWidget"],
+    .stApp > div:last-child {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Top padding */
     .block-container {
         padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
+        padding-bottom: 2rem !important;
     }
     </style>
 """
